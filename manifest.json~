@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Sample of UDP Network Access",
+  "description": "Echo..... Echo.",
+  "version": "2.1",
+  "minimum_chrome_version": "23",
+    "background": {
+      "scripts": ["main.js"]
+    },
+  "browser_action": {
+    "default_icon": "assets/icon.png"
+   },
+  "permissions": [
+    "tabs",
+    "http://*/",
+    {"socket": [
+      "udp-send-to"
+    ]}
+  ]
+}

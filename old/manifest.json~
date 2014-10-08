@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "HTML-TO-UDP",
+  "description": "This extension transmits an HTML Dom object over UDP.",
+  "version": "1.0",
+
+  "permissions": [
+	"experimental",
+  	"activeTab",
+	"tabs"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}

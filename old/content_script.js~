@@ -1,0 +1,34 @@
+
+  console.log("HElll");
+document.addEventListener('DOMContentLoaded', function () {
+  console.log("HE");
+})
+
+/*var oscPort = new osc.WebSocketPort({
+    url: "ws://localhost:8081" // URL to your Web Socket server.
+});*/
+
+$("<style type='text/css'> .redborder { border: 2px solid red;} </style>").appendTo("head");
+var watchElement = -1;
+
+
+$(document).click(function(event) {
+    if(watchElement == -1) {
+	    watchElement = $(event.target);
+	    $(".redborder").removeClass("redborder")	
+	    watchElement.addClass("redborder");
+	    watchElement.bind("DOMSubtreeModified",function() {
+		/*
+		oscPort.send({
+		    address: "/price",
+		    args: watchElement.html()
+		});*/
+		console.log(watchElement.html());
+	    });
+    }
+});
+
+
+
+
+

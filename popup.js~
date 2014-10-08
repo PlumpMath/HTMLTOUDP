@@ -1,0 +1,42 @@
+
+
+/*var oscPort = new osc.WebSocketPort({
+    url: "ws://localhost:8081" // URL to your Web Socket server.
+});*/
+
+$("<style type='text/css'> .redborder { border: 2px solid red;} </style>").appendTo("head");
+var watchElement = -1;
+
+	alert("ho");
+$( document ).ready(function() {
+	alert("ho");
+	$(document).click(function(event) {
+		alert("bam");
+	});
+});
+
+chrome.tabs.executeScript(null,{
+        code:"document.body.style.backgroundColor='red'"
+      });
+
+$(document).click(function(event) {
+    alert("yo");
+    if(watchElement == -1) {
+	    watchElement = $(event.target);
+	    $(".redborder").removeClass("redborder")	
+	    watchElement.addClass("redborder");
+	    watchElement.bind("DOMSubtreeModified",function() {
+		/*
+		oscPort.send({
+		    address: "/price",
+		    args: watchElement.html()
+		});*/
+		alert(watchElement.html());
+	    });
+    }
+});
+
+
+
+
+
